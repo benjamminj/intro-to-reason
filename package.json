@@ -1,0 +1,16 @@
+{
+  "name": "reason-presentation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Benjamin Johnson <benjamin.d.johnson@icloud.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "mdx-deck deck.mdx"
+  },
+  "devDependencies": {
+    "mdx-deck": "^1.7.1"
+  },
+  "dependencies": {
+    "react-syntax-highlighter": "^8.0.1"
+  }
+}
