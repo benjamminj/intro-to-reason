@@ -1,11 +1,11 @@
 import { Appear } from 'mdx-deck';
 import React from 'react';
 
-const AppearList = ({ children }) => {
+const AppearList = ({ children, ...props }) => {
   const [first, ...rest] = children;
 
   return (
-    <ul>
+    <ul {...props}>
       {first}
       <Appear>{rest}</Appear>
     </ul>

@@ -1,32 +1,46 @@
 import {Appear, Head} from 'mdx-deck';
-import {AppearList, Img} from './components';
-import { FullScreenCode, Split } from 'mdx-deck/layouts';
-import {FullScreenCodeWithTitle} from './layouts';
-
+import {AppearList, Img, SmallList, Li, AppearColumns, Column} from './components';
+import { FullScreenCode, Split} from 'mdx-deck/layouts';
+import {FullScreenCodeWithTitle, DarkBackground, ReasonBackground, FullScreen} from './layouts';
 
 export {default as theme} from './theme.js';
 
-# Intro to Reason
+# Intro to 
+<br/>
+<Img width="60vw" object-fit="contain" minWidth="auto" src="./img/reason-logo-word.svg" alt="Reason"/>
 
 ---
+export default Split
 
-## About Me
+<SmallList>
+
+## About Me 👨🏻‍💻
 
 - Front-End Engineer at AutoGravity
-- Twitter: @benjamminj
+- [@benjamminj](https://twitter.com/benjamminj)
 - Medium blog
 
-<!-- TODO -- add pic -->
+</SmallList>
+
+<Img minWidth="auto" width="50vw" src="./img/profile.jpeg" alt="Benjamin Johnson" />
 
 ---
+export default ReasonBackground
 
-![paradise](./img/paradise.jpg)
-
----
-
-![chili](./img/chili.gif)
+# The Problem
 
 ---
+export default FullScreen
+
+<Img src="./img/paradise.jpg" width="100vw" height="100vh" />
+
+---
+export default FullScreen
+
+<Img src="./img/chili.gif" width="100vw" height="100vh" minWidth="auto" objectFit="cover" />
+
+---
+export default ReasonBackground
 
 # How do we keep code bases from becoming complex?
 
@@ -41,53 +55,70 @@ export {default as theme} from './theme.js';
 
 ---
 
-##  ⚠️️️️️⚠️⚠️ _Quick Disclaimer_ ⚠️️️️️⚠️⚠️
+> Types aren't a substitute for tests, or vice versa
 
 ---
 
-# Types & JavaScript
+## Types & JavaScript
 
-<br />
-<Appear>
-  <Img height="200px" shape="square" src="./img/js.png" alt="No Types, Just JavaScript" />
-  <Img height="200px" shape="square" src="./img/typescript.png" alt="TypeScript" />
-  <Img height="200px" shape="square" src="./img/flowtype.jpg" alt="Flow" />
-  <Img height="200px" shape="square" src="./img/purescript.png" alt="PureScript" />
-  <Img minWidth="auto" objectFit="scale-down" height="200px" src="./img/dart.png" alt="Dart" />
-  <Img height="200px" shape="square" src="./img/elm.png" alt="Elm" />
-  <Img height="200px" shape="square" src="./img/reason-logo.png" alt="Reason" />
-</Appear>
-
+<ul style={{ display: 'grid', 'grid-template-columns': '1fr 1fr 1fr', width: '100vw' }}>
+  <Appear>
+    <li>
+      <h5>No types</h5>
+      <Img height="75px" shape="square" src="./img/js.png" alt="No Types, Just JavaScript" />
+    </li>
+    <li>
+      <h5>Types + JS</h5>
+      <Img height="75px" shape="square" src="./img/typescript.png" alt="TypeScript" />
+      <Img height="75px" shape="square" src="./img/flowtype.jpg" alt="Flow" />
+    </li>
+    <li>
+      <h5>Compile-to-JS</h5>
+      <Img minWidth="auto" objectFit="scale-down" height="75px" src="./img/dart.png" alt="Dart" />
+      <Img height="75px" shape="square" src="./img/elm.png" alt="Elm" />
+      <Img height="75px" shape="square" src="./img/reason-logo-word.svg" alt="Reason" />
+    </li>
+  </Appear>
+</ul>
 ---
+export default ReasonBackground
 
 > "Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems."
 
 ---
 
-
 <AppearList>
-  <li>Syntax extension of the OCaml programming language</li>
-  <li>Same creator as React</li>
-  <li>Super fun! 🎉</li>
+  <li>🐪 Syntax extension of OCaml</li>
+  <li>⚛️ Same creator as React</li>
+  <li>🎉 Uses a familiar syntax & workflows</li>
 </AppearList>
 
 ---
 
-# What's this OCaml thing?
+# Why OCaml?
 
 ---
+export default ReasonBackground
 
 > "OCaml is an industrial strength programming language supporting functional, imperative and object-oriented styles"
 
 ---
 
 <AppearList>
+  <li>Battle-hardened over 20 years</li>
   <li>Immutable & functional by default</li>
-  <li>Still allows imperative code</li>
+  <li>Still allows imperative & mutable code</li>
   <li>Rock solid type system with awesome inference</li>
 </AppearList>
 
 ---
+
+# BuckleScript
+
+---
+<!-- // TODO -- recap of the reason ecosystem -->
+---
+export default ReasonBackground
 
 # Syntax
 
@@ -128,7 +159,7 @@ addText(~addition="test", ~text="TODO -- this is a ")
 ---
 export default FullScreenCodeWithTitle
 
-### Records
+## Records
 
 <!-- TODO -- better ex. -->
 
@@ -147,7 +178,7 @@ let record = {
 ---
 export default FullScreenCodeWithTitle
 
-### Lists & Arrays
+## Lists & Arrays
 
 ```reason
 /* Lists are immutable & fast at adding items */
@@ -164,7 +195,7 @@ arr[3] = "a little strange,";
 ---
 export default FullScreenCodeWithTitle
 
-### Variant!
+## Variant!
 
 ```reason
 let letter = 
@@ -178,7 +209,7 @@ let a = C(43);
 ---
 export default FullScreenCodeWithTitle
 
-### Pattern Matching!
+## Pattern Matching!
 
 ```reason
 /* TODO -- better example? */
@@ -195,7 +226,7 @@ applyLetter(C(23));
 ---
 export default FullScreenCodeWithTitle
 
-### More Pattern Matching!
+## More Pattern Matching!
 
 ```reason
 let getPostRecommendation = (posts) => {
@@ -251,6 +282,7 @@ let sum = Math.add(1,2);
 <!-- TODO -- add a dank GIF here or something -->
 
 ---
+export default FullScreenCodeWithTitle
 
 ## Stateless Components
 
@@ -268,6 +300,7 @@ let make = (~onClick, ~color, ~text, _children) => {
 ```
 
 ---
+export default FullScreenCodeWithTitle
 
 ## Stateful (Reducer) Components
 
@@ -300,7 +333,6 @@ let make = (~initialCount=0, _children) => {
 ```
 
 ---
-
-
+export default ReasonBackground
 
 # The end
