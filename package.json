@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx",
-    "publish": "gh-pages -d dist"
+    "build": "cp -r img static && mdx-deck build -d static deck.mdx",
+    "publish": "gh-pages -d static"
   },
   "devDependencies": {
     "gh-pages": "^1.2.0",

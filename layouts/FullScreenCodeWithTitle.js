@@ -13,10 +13,12 @@ const Wrapper = styled.div`
     display: flex !important;
     left: 0;
     margin: 0 !important;
+    /* padding-top: 4rem !important; */
     position: absolute !important;
     right: 0;
     top: 0;
     z-index: 0;
+    overflow: scroll;
   }
 
   h1,
