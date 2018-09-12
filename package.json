@@ -5,9 +5,12 @@
   "author": "Benjamin Johnson <benjamin.d.johnson@icloud.com>",
   "license": "MIT",
   "scripts": {
-    "start": "mdx-deck deck.mdx"
+    "start": "mdx-deck deck.mdx",
+    "build": "mdx-deck build deck.mdx",
+    "publish": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^1.2.0",
     "mdx-deck": "^1.7.1"
   },
   "dependencies": {
