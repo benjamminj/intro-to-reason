@@ -14,6 +14,7 @@ const theme = Object.assign({
     /* background: primaryColor,
     heading: '#fff' */
   },
+  font: 'Hind, Ubuntu, Roboto, sans-serif',
   css: {
     ...base.css,
     ul: {
