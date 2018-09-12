@@ -28,11 +28,6 @@ We're hiring! So if you're a Front-End Engineer & you're looking for a job, plea
 <Img minWidth="auto" width="50vw" src="./img/profile.jpeg" alt="Benjamin Johnson" />
 
 ---
-export default ReasonBackground
-
-# The Problem
-
----
 export default FullScreen
 
 <Img src="./img/paradise.jpg" width="100vw" height="100vh" />
@@ -56,46 +51,14 @@ export default ReasonBackground
   <li>Types 🔓</li>
 </AppearList>
 
+```notes
+types: quick note about the typed JS landscape
+
+```
 ---
+export default ReasonBackground 
 
 > Types aren't a substitute for tests, or vice versa.
-
----
-
-## Types in JS Landscape
-
-<ul style={{ display: 'grid', 'gridTemplateColumns': '1fr 1fr 1fr', width: '100vw', padding: '0 2rem' }}>
-  <Appear>
-    <li>
-      <h5>No types</h5>
-      <Img height="125px" shape="square" src="./img/js.png" alt="No Types, Just JavaScript" />
-    </li>
-    <li>
-      <h5>Types + JS</h5>
-      <Img height="125px" shape="square" src="./img/typescript.png" alt="TypeScript" />
-      <Img height="125px" shape="square" src="./img/flowtype.jpg" alt="Flow" />
-    </li>
-    <li>
-      <h5>Compile-to-JS</h5>
-      <Img minWidth="auto" objectFit="scale-down" height="125px" src="./img/dart.png" alt="Dart" />
-      <Img height="125px" shape="square" src="./img/elm.png" alt="Elm" />
-      <Img height="125px" shape="square" src="./img/reason-logo-word.svg" alt="Reason" />
-    </li>
-  </Appear>
-</ul>
-
-```notes
-Do a quick comparison of Reason vs. TS. 
-
-TS has a smaller learning curve, but you will sacrifice on the guarantee of your type system. In addition, it stays very close to JS language semantics.
-
-On the other hand, compile-to-JS may have a steeper learning curve in favor of more safety and more elegant FP patterns.
-```
-
----
-export default ReasonBackground
-
-> "Reason lets you write simple, fast and quality type safe code while leveraging both the JavaScript & OCaml ecosystems."
 
 ---
 
@@ -104,15 +67,6 @@ export default ReasonBackground
   <li>⚛️ Same creator as React</li>
   <li>🎉 Uses a familiar syntax & workflows</li>
 </AppearList>
-
----
-
-# Why OCaml?
-
----
-export default ReasonBackground
-
-> "OCaml is an industrial strength programming language supporting functional, imperative and object-oriented styles"
 
 ---
 
@@ -144,30 +98,14 @@ BuckleScript is a compiler for OCaml --> JS
 Since Reason is just a syntax _for_ OCaml, it can easily leverage this tool that already existed within the OCaml ecosystem to allow cross-platform ability instantly.
 
 BuckleScript does a lot of optimizations under the hood, since it's not trying to do 1:1 conversions into JS.
-
-Pull open VSCode here, use the BuckleScript Example file
 ```
----
-# Example
-## BuckleScript Output
----
-export default ReasonBackground
-
-> BuckleScript means that Reason code that can be compiled for web and native!
-
-```notes
-
-This is a rather complex ecosystem. We're talking about a new language on top of JS, adding
-the "learning curve" of a static type system. This can cause us to ask ourselves if it's
-even *switch slide* really worth it.
-
-```
-
 ---
 
 # Is all this really necessary?
 
 ```notes
+Short answer: no, it's not necessary. but good? yes.
+
 Cons: 
 
 steeper learning curve, 
@@ -189,7 +127,7 @@ well-maintained by FB,
 
 100% type coverage, 
 
-better FP support in the language, 
+better FP support in the language itself, 
 
 THE LANGUAGE ENCOURAGES YOU TO REFACTOR!
 ```
@@ -369,20 +307,18 @@ export default FullScreenCodeWithTitle
 
 ```reason
 /* Every file also doubles as a module! */
-let myFn = a => FileName.map();
+let add2 = a => Math.add(2, a);
 
 /* You can also import everything from a module into a file */
-open FileName;
-let  myFn = a => map();
+open Math;
+let add2 = a => add(2, a);
 
-/* You can also declare internal modules */
-module Math = {
-  let add = (a, b) => a + b;
-  let mult = (a, b) => a * b;
-  let div = (a, b) => a / b;
-}
+/* You can also do a "local open" */
+let add2 = a => {
+  open Math;
+  add(2, a);
+};
 
-let sum = Math.add(1, 2);
 ```
 
 ```notes
