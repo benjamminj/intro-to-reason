@@ -4,15 +4,13 @@ import reason from 'react-syntax-highlighter/languages/prism/reason';
 import { Img } from './components';
 
 export const primaryColor = '#e3695a';
-export const darkGray = '#373F51'
+export const darkGray = '#373F51';
 
 const theme = Object.assign({
   ...base,
   colors: {
     ...base.colors,
-    background: '#efedec'
-    /* background: primaryColor,
-    heading: '#fff' */
+    background: '#efedec',
   },
   font: 'Hind, Ubuntu, Roboto, sans-serif',
   css: {
@@ -23,7 +21,7 @@ const theme = Object.assign({
       fontWeight: 'bold',
       textAlign: 'left',
       minWidth: '60vw',
-      paddingLeft: '0'
+      paddingLeft: '0',
     },
     li: {
       margin: '1rem',
@@ -35,8 +33,8 @@ const theme = Object.assign({
       maxWidth: '100%',
     },
     h5: {
-      margin: '0 0 1em'
-    }
+      margin: '0 0 1em',
+    },
   },
   prism: {
     style: okaidia,
